@@ -5,13 +5,16 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
+    "build:github": "npm run build:href && npm run copy:dist",
+    "copy:dist": "copyfiles dist/pipes-app/browser/* ./docs -f",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:pipesApp": "node dist/pipes-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^17.0.0",
+    "@angular/animations": "^17.0.8",
     "@angular/common": "^17.0.0",
     "@angular/compiler": "^17.0.0",
     "@angular/core": "^17.0.0",
@@ -22,6 +25,9 @@
     "@angular/router": "^17.0.0",
     "@angular/ssr": "^17.0.5",
     "express": "^4.18.2",
+    "primeflex": "^3.3.1",
+    "primeicons": "^6.0.1",
+    "primeng": "^17.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
